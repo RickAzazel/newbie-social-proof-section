@@ -1,13 +1,18 @@
-*, ::after, ::before {
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+*,
+::after,
+::before {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	font-family: 'League Spartan', sans-serif;
 }
 
 :root {
 	/** =========== Colors =============== */
 	/* Background color */
-	--main-bg-color: white;
+	--wrapper-bg-color: white;
 	--review-bg-color: rgb(80, 32, 80);
 	--rate-bar-bg-color: rgb(247, 242, 247);
 
@@ -17,12 +22,10 @@
 	--rate-bar-font-color: rgb(80, 32, 80);
 	--review-name-font-color: white;
 	--review-verification-font-color: rgb(238, 104, 164);
-	--review-text-font-color: rgb(247, 242, 247);		
-
+	--review-text-font-color: rgb(247, 242, 247);
 }
 
 html {
-	font-family: 'League Spartan', sans-serif;
 	font-size: 62.5%;
 }
 
@@ -31,10 +34,11 @@ html {
 	width: 100%;
 	max-height: 900px;
 	padding: 130px 160px;
-	background: white;
+	background: var(--wrapper-bg-color);
 }
 
-.wrapper::before, .wrapper::after {
+.wrapper::before,
+.wrapper::after {
 	content: '';
 	height: 100%;
 	width: 100%;
@@ -63,7 +67,7 @@ html {
 }
 
 /** =========== Description =============== */
-.social-proof__description {	
+.social-proof__description {
 	flex: 0 1 390px;
 }
 
@@ -86,7 +90,7 @@ html {
 }
 
 /** =========== Rate bar =============== */
-.social-proof__rate-bar {	
+.social-proof__rate-bar {
 	flex: 0 1 50%;
 	display: flex;
 	flex-direction: column;
@@ -105,7 +109,7 @@ html {
 }
 
 .rate-bar__item--third-item {
-	align-self:flex-end;
+	align-self: flex-end;
 }
 
 .rate-bar__stars {
@@ -132,12 +136,13 @@ html {
 }
 
 /** =========== Review =============== */
-.social-proof__review {	
+.social-proof__review {
 	flex: 0 1 100%;
 	display: flex;
 	justify-content: space-between;
 	height: 290px;
 	align-self: center;
+	margin-top: 40px;
 	padding-bottom: 20px;
 }
 
@@ -204,7 +209,6 @@ html {
 }
 
 /** =========== Media queries =============== */
-
 /* Desktops */
 @media (max-width: 1200px) {
 	.wrapper {
@@ -230,8 +234,6 @@ html {
 	.rate-bar__item {
 		margin: 10px 0;
 	}
-	/* Review */
-
 }
 
 /* Laptops */
@@ -241,10 +243,8 @@ html {
 		max-height: 900px;
 	}
 
-	/* Description */
-	/* Rate bar */
 	/* Review */
-	.review__item  {
+	.review__item {
 		height: 260px;
 		padding: 20px;
 		justify-content: flex-start;
@@ -260,7 +260,6 @@ html {
 
 	.wrapper {
 		height: 100%;
-		
 	}
 
 	.social-proof__description,
@@ -292,6 +291,7 @@ html {
 	.social-proof__review {
 		display: grid;
 		flex-wrap: wrap;
+		margin-top: 0;
 		padding-bottom: 40px;
 		height: 100%;
 	}
@@ -304,7 +304,7 @@ html {
 	.review__item--second-item {
 		justify-self: center;
 	}
-	
+
 	.review__item--third-item {
 		justify-self: right;
 	}
@@ -330,13 +330,13 @@ html {
 	.title {
 		font-size: 3.7rem;
 	}
+
 	/* Rate bar */
 	.rate-bar__item {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		
 	}
 
 	.rate-bar__stars,
